@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+{% block content %}
+    <form method="POST">
+        {{form.hidden_tag()}}
+        <div class="form-group">  
+            {{form.email.label(class_='form-group')}}{{form.email(class_='form-control')}}
+            {% if form.email.errors %}
+
+                <script>
+                    var element = document.getElementById("email");
+                    element.classList.add("is-invalid");
+                </script>
+
+                <div class="invalid-feedback">
+                    {% for error in form.email.errors %}
+                        {{error}}
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+
+        <div class="form-group">
+            {{form.username.label(class_='form-group')}}{{form.username(class_='form-control')}}
+            {% if form.username.errors %}
+
+                <script>
+                    var element = document.getElementById("username");
+                    element.classList.add("is-invalid");
+                </script>
+
+                <div class="invalid-feedback">
+                    {% for error in form.username.errors %}
+                        {{error}}
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+
+        <div class="form-group">
+            {{form.password.label(class_='form-group')}}{{form.password(class_='form-control')}}
+            {% if form.password.errors %}
+
+                <script>
+                    var element = document.getElementById("password");
+                    element.classList.add("is-invalid");
+                </script>
+
+                <div class="invalid-feedback">
+                    {% for error in form.password.errors %}
+                        {{error}}
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+
+        <div class="form-group">
+            {{form.pass_confirm.label(class_='form-group')}}{{form.pass_confirm(class_='form-control')}}
+            {% if form.pass_confirm.errors %}
+
+                <script>
+                    var element = document.getElementById("pass_confirm");
+                    element.classList.add("is-invalid");
+                </script>
+
+                <div class="invalid-feedback">
+                    {% for error in form.pass_confirm.errors %}
+                        {{error}}
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+
+        {{form.submit(class='btn btn-primary')}}
+    </form>
+{% endblock %}
