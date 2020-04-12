@@ -16,8 +16,8 @@ Tables created in MYSQL DATABASE :
 # steps to follow in order to run on you system : 
 1) create credentials.py file in root directory having secret_key and sqlalchemy_database_uri variable along with it's value as a string
 2) Open command prompt and run
-        i)      flask db init
-        ii)     flask db migrate -m "first migration"
-        iii)    flask db upgrade
-        iv)     and then run the app by typing python app.py
+i)      flask db init
+ii)     flask db migrate -m "first migration"
+iii)    flask db upgrade
+iv)     and then run the app by typing python app.py
  
