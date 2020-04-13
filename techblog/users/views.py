@@ -20,8 +20,8 @@ def register():
         if form.check_username(form.username.data):
             flash('This username has been registered already')
             return redirect(url_for('users.register'))
-        # db.session.add(user)
-        # db.session.commit()
+        db.session.add(user)
+        db.session.commit()
         flash('Successfully Registered. Please Log In.')
         return redirect(url_for('users.login'))
 
